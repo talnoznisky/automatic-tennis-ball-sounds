@@ -10,8 +10,8 @@ class SpriteSheet():
         self.current_frame = 0
 
         # todo: starting points - randomize or add as inputs 
-        self.x = 50
-        self.y = 50
+        self.x = 0
+        self.y = 0
 
         # todo: size - randomize within a range or as inputs
         self.width = 30 
@@ -49,7 +49,7 @@ class SpriteSheet():
     @staticmethod
     def get_possible_sounds():
         from glob import glob
-        return glob('/Users/talnoznisky/sampling/tennis-match-1 Project/Samples/Processed/Crop/*.wav')
+        return glob('./sounds/*.wav')
 
     def play_sound(self):
         pygame.mixer.Sound.play(pygame.mixer.Sound(choice(self.possible_sounds)))
