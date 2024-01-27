@@ -1,5 +1,4 @@
 import pygame
-from random import randint
 import spritesheet
 
 pygame.init()
@@ -7,18 +6,18 @@ pygame.init()
 win = pygame.display.set_mode((500, 500))
 pygame.display.set_caption('tennis ball animation')
 
-BG  = (0, 100, 75)
+BG  = (0, 100, 50)
 sprite_sheet_image = pygame.image.load('./sprites/tennis_ball_sprite.png').convert_alpha()
 
 
 # create multiple sprite sheet objs
-sprites = [spritesheet.SpriteSheet(sprite_sheet_image) for i in range(20)]
+sprites = [spritesheet.SpriteSheet(sprite_sheet_image) for i in range(5)]
 
 
 run = True
 i = 0
 while run:
-    pygame.time.delay(40)
+    pygame.time.delay(20)
 
     win.fill(BG)
     if i < 8:
