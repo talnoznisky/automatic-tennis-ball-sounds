@@ -2,7 +2,7 @@
 name = "automatic-tennis-ball-sounds"
 version = "0.1.0"
 description = "tennis ball bouncing asmr"
-authors = ["Your Name <you@example.com>"]
+authors = ["Tal Noznisky <tal.noznisky@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
