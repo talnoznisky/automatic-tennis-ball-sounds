@@ -2,29 +2,25 @@ import pygame
 from random import choice, random
 
 class SpriteSheet():
-    def __init__(self, image, frame_count=7):
+    def __init__(self, image, x_boundary, y_boundary, frame_count=7):
         self.sheet = image
 
-        # todo: set as arg but offer default
         self.frame_count = frame_count
         self.current_frame = 0
 
-        # todo: starting points - randomize or add as inputs 
         self.x = 0
         self.y = 0
 
-        # todo: size - randomize within a range or as inputs
         self.width = 30 
         self.height = 30
 
-        # todo: direction -     1. needs to be able to go in reverse 
-        # todo: direction -     2. is this in the right place/data type (e.g. should it be a tuple?)
         self.x_vel = random() * 10
         self.y_vel = random() * 10
 
-        # todo: base needs to be a variable taken from screen width of calling program
-        self.x_target = 500 - self.width
-        self.y_target = 500 - self.height
+        self.x_boundary =   x_boundary
+        self.y_boundary =   y_boundary
+        self.x_target =     x_boundary - self.width
+        self.y_target =     y_boundary - self.height
         
         self.possible_sounds = self.get_possible_sounds()
 
@@ -67,7 +63,7 @@ class SpriteSheet():
             self.x_target = 0
             self.play_sound()
         if self.x == self.x_target and self.x_target == 0:
-            self.x_target = 500 - self.width
+            self.x_target = self.x_boundary - self.width
             self.play_sound()
 
         if self.x_target > 0:
@@ -86,7 +82,7 @@ class SpriteSheet():
             self.y_target = 0
             self.play_sound()      
         if self.y == self.y_target and self.y_target == 0:
-            self.y_target = 500 - self.width
+            self.y_target = self.y_boundary - self.height
             self.play_sound()
 
         if self.y_target > 0:
