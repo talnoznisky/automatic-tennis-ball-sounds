@@ -6,4 +6,4 @@ Small `pygame` program to bounce tennis balls around the frame and trigger delig
 - pygame = "^2.5.2"
 
 # LOOKS LIKE THIS
-![automatic-tennis-balls-example](automatic-tennis-balls-example.gif)
+<img src='automatic-tennis-balls-example.gif' width=200>
